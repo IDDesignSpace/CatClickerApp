@@ -1,0 +1,19 @@
+body {
+    padding: 0 30% ;
+
+    color:blue;
+}
+div {
+    border:red solid 10px;
+    margin:0 auto;
+    text-align: center;
+}
+h1 {
+    display:inline-block;
+    margin:0 auto;
+}
+img {
+    display:block;
+    margin:0 auto;
+    padding-bottom: 20%;
+}
