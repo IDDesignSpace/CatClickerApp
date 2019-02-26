@@ -53,7 +53,9 @@ class Cat {
 
      // Sets the header text to the cats name 
      this.newCatTag.textContent = this.name;
-     this.newCatImage.setAttribute('src', "images/cat.jpg");
+
+     // Sets the images path to the imagePath property
+     this.newCatImage.setAttribute('src', imagePath);
      this.newCatImage.setAttribute('height', "400");  
   }
 }
