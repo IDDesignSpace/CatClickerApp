@@ -17,12 +17,12 @@ let numOfTimes = 0;
 
 
 // catNameArr creates an array of cat names, paths to that cats image, and an assigned color
-let catNameArr = [["Peanut","img/peanut.jpg","blue" ],["Nana","img/nana.jpg","red"],["Courage","img/courage.jpg",""], ["PuffBawlz","img/puffbawls",""],["Tiny","img/tiny,jpg","green"]];
+let catNameArr = [["Peanut","images/peanut.jpg","blue" ],["Nana","images/nana.jpg","red"],["Courage","images/courage.jpg",""], ["PuffBawlz","images/puffbawls.jpg",""],["Tiny","images/tiny.jpg","green"]];
 let cats = new Array();
 
 // This uses an ES6 Class constructor to create a standard Cat object that creates the html and inserts the cats respective image and color.
 class Cat {
-  constructor(name,imagePath,color){
+  constructor([name,imagePath,color]){
     this.name = name;
     this.image = imagePath;
     this.color = color; 
@@ -31,7 +31,7 @@ class Cat {
   constructCatPageContent () {
       // Grabs header and img tags  
      this.catHeadingTag = document.querySelector('h1');
-     this.imageTag = document.querySelector('img');
+     this.imageTag = document.querySelector('.cat_image');
 
      // Creates header and img tags
     //  this.newCatImage = document.createElement('img');
@@ -45,8 +45,9 @@ class Cat {
      this.catHeadingTag.textContent = this.name;
 
      // Sets the images path to the imagePath property
-     this.imageTag.setAttribute('src',this.imagePath);
-     this.imageTag.setAttribute('height', "300");  
+     this.imageTag.removeAttribute('src');
+     this.imageTag.setAttribute('src',this.image);
+      
   }
 }
 
@@ -74,12 +75,28 @@ catNameArr.forEach(function(item) {
   newListItem.addEventListener('click',function(event) {
     console.log(event)
     if(event.target.textContent == "Peanut") {
-      console.log("I'm Peanut");
-      let peanut = new Cat(item[0]);
-      peanut.constructCatPageContent();
-    } 
+        console.log("I'm Peanut");
+        let peanut = cats[0];
+        peanut.constructCatPageContent();
+    } else if (event.target.textContent == "Nana"){
+        console.log("I'm Nana");
+        let nana = cats[1];
+        nana.constructCatPageContent();
+    }  else if (event.target.textContent == "Courage"){
+        console.log("I'm Courage");
+        let courage= cats[2];
+        courage.constructCatPageContent();
+    } else if (event.target.textContent == "PuffBawlz"){
+        console.log("I'm PuffBawlz");
+        let puffBawlz= cats[3];
+        puffBawlz.constructCatPageContent();
+    } else if (event.target.textContent == "Tiny") {
+        console.log("I'm Tiny");
+        let tiny = cats[4];
+        tiny.constructCatPageContent();
+    }
 
-  })
+  });
 
   // Adds each newly created list item to the list element
   createdList.appendChild(newListItem);
