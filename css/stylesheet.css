@@ -1,5 +1,14 @@
 body {
     background-color:rgb(255, 0, 140);
+    padding: 130px;
+    font-family: 'VT323', monospace;
+    color:yellowgreen;
+}
+
+h1 {
+    margin-left:45%;
+    font-size: 70px;
+    padding:0;
 }
 
 
@@ -7,4 +16,34 @@ img {
     display:block;
     margin:0 auto;
     padding-bottom: 20%;
+}
+
+ol {
+    list-style: none;
+}
+
+.container {
+    border:purple solid 20px;
+    border-radius:20%;
+    
+    padding-bottom:100px;
+    height:800px;
+}
+.nav {
+    height:100%;
+    width:20%;
+    margin:0 auto;
+    border-right:purple solid 20px;
+    font-size:50px;
+    text-align:center;
+    padding-top:100px;
+    float:left;
+}
+
+.cat_image {
+    height:100%;
+    border:solid yellow 10px;
+    padding:0;
+    border-radius: 20%;
+    margin-left:40%;
 }
