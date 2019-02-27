@@ -1,33 +1,23 @@
 let numOfTimesTag= document.querySelector('h2');
 let numOfTimes = 0;
-// let catImage = document.querySelector('img');
-// let catDiv = document.querySelector('div');
-// let newCatImage = document.createElement('img');
-// let newCatName = document.createElement('h2');
 
-// catDiv.appendChild(newCatName);
-// catDiv.appendChild(newCatImage);
-// newCatName.textContent = "Mr.Fluffles";
-// newCatImage.setAttribute('src', "images/cat.jpg");
-// newCatImage.setAttribute('height', "400");
+// catImage.addEventListener("click", function() {
+//       numOfTimes++;
+//       numOfTimesTag.textContent = numOfTimes;
+//       numOfTimesTag.style.color = "orangered";
+//       console.log("I'm being clicked");
+// },false);
 
-catImage.addEventListener("click", function() {
-      numOfTimes++;
-      numOfTimesTag.textContent = numOfTimes;
-      numOfTimesTag.style.color = "orangered";
-      console.log("I'm being clicked");
-},false);
-
-newCatImage.addEventListener("click", function () {
-      numOfTimes++;
-      numOfTimesTag.textContent = numOfTimes;
-      numOfTimesTag.style.color = "orangered";
-      console.log("I'm being clicked");
-}, false);
+// newCatImage.addEventListener("click", function () {
+//       numOfTimes++;
+//       numOfTimesTag.textContent = numOfTimes;
+//       numOfTimesTag.style.color = "orangered";
+//       console.log("I'm being clicked");
+// }, false);
 
 
 // catNameArr creates an array of cat names, paths to that cats image, and an assigned color
-let catNameArr = [["Peanut","img/peanut.jpg.jpg","blue" ],["Nana","img/nana.jpg","red"],["Courage","img/courage.jpg",""], ["PuffBawlz","img/puffbawls",""],["Tiny","img/tiny,jpg","green"];
+let catNameArr = [["Peanut","img/peanut.jpg.jpg","blue" ],["Nana","img/nana.jpg","red"],["Courage","img/courage.jpg",""], ["PuffBawlz","img/puffbawls",""],["Tiny","img/tiny,jpg","green"]];
 let cats = new Array();
 
 // This uses an ES6 Class constructor to create a standard Cat object that creates the html and inserts the cats respective image and color.
@@ -65,4 +55,28 @@ catNameArr.forEach(function(name){
   cats.push(new Cat(name));
 })
 
-console.log(cats);
+let cat = new Cat("whiskers");
+
+// page.js is to create the 
+let newList = document.createElement('ol');
+document.body.appendChild(newList);
+
+
+catNameArr.forEach(function(item) {
+
+  // Creates new li element and selects the ol to add it to 
+  let newListItem = document.createElement('li');
+  let createdList = document.querySelector('ol');
+
+  // Sets the text of each li to the the first item of each  sub-array 
+  newListItem.textContent = item[0];
+
+  newListItem.addEventListener('click',function(event) {
+    console.log(event);
+    console.log("I'm being clicked");
+  })
+
+  // Adds each newly created list item to the list element
+  createdList.appendChild(newListItem);
+
+});
