@@ -1,5 +1,4 @@
-let numOfTimesTag= document.querySelector('h2');
-let numOfTimes = 0;
+
 
 // catImage.addEventListener("click", function() {
 //       numOfTimes++;
@@ -33,20 +32,25 @@ class Cat {
      this.catHeadingTag = document.querySelector('h1');
      this.imageTag = document.querySelector('.cat_image');
 
-     // Creates header and img tags
-    //  this.newCatImage = document.createElement('img');
-    //  this.newCatTag = document.createElement('h1');
-
-    //  // Appends image and header tag to document    
-    //  document.appendChild(this.newCatTag);
-    //  document.appendChild(this.newCatImage);
-
      // Sets the header text to the cats name 
      this.catHeadingTag.textContent = this.name;
-
+     
      // Sets the images path to the imagePath property
      this.imageTag.removeAttribute('src');
      this.imageTag.setAttribute('src',this.image);
+
+     let numOfTimes = 0;
+     let numOfTimesTag= document.querySelector('h2');
+     
+     numOfTimesTag.textContent=numOfTimes;
+
+     this.imageTag.addEventListener('click', (function(numCopy) {
+       return function() {
+         numCopy++;
+         numOfTimesTag.textContent= numCopy;
+       };
+       
+     })(numOfTimes));
       
   }
 }
